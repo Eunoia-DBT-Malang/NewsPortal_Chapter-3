@@ -6,22 +6,23 @@ function News() {
   const [isLoading] = useState(false);
   const [q] = useState("");
   const [searchParam] = useState(["name", "description", "category"]);
-  const [labelCategory] = useState([
-    { value: "All", label: "All (Filter By Category)" },
-    { value: "general", label: "General" },
-    { value: "business", label: "Business" },
-    { value: "entertainment", label: "Entertainment" },
-    { value: "health", label: "Health" },
-    { value: "sceince", label: "Sceince" },
-    { value: "sports", label: "Sports" },
-    { value: "technology", label: "Technology" },
-  ]);
+  //   const [labelCategory] = useState([
+  //     { value: "All", label: "All (Filter By Category)" },
+  //     { value: "general", label: "General" },
+  //     { value: "business", label: "Business" },
+  //     { value: "entertainment", label: "Entertainment" },
+  //     { value: "health", label: "Health" },
+  //     { value: "sceince", label: "Sceince" },
+  //     { value: "sports", label: "Sports" },
+  //     { value: "technology", label: "Technology" },
+  //   ]);
   const [filterParam, setFilterParam] = useState("All");
   const [news, setNews] = useState([]);
-  const [originalNews, setOriginalNews] = useState([]);
+  //   const [originalNews, setOriginalNews] = useState([]);
+  const today = new Date();
 
   const url =
-    "https://newsapi.org/v2/everything?q=apple&from=2023-03-22&to=2023-03-22&sortBy=popularity&apiKey=0434c0eca2b946889dea2b478ee7e562";
+    `https://newsapi.org/v2/everything?q=apple&from=${today}&to=${today}&sortBy=popularity&apiKey=0434c0eca2b946889dea2b478ee7e562`;
 
   useEffect(() => {
     async function getNews() {
@@ -37,17 +38,17 @@ function News() {
     getNews();
   }, []);
 
-  const filterType = async (category) => {
-    try {
-      await setFoods(
-        originalFoods.filter((item) => {
-          return item.category === category;
-        })
-      );
-    } catch (error) {
-      alert(error);
-    }
-  };
+  //   const filterType = async (category) => {
+  //     try {
+  //       await setFoods(
+  //         originalFoods.filter((item) => {
+  //           return item.category === category;
+  //         })
+  //       );
+  //     } catch (error) {
+  //       alert(error);
+  //     }
+  //   };
 
   function cari(news) {
     isLoading(true);
@@ -104,10 +105,10 @@ function News() {
   }, []);
 
   return (
-    <div className="container mx-auto mt-60">
+    <div className="container mx-auto mt-32">
       <div className="flex flex-col mx-[10%]">
         <div>
-          <form className="max-w-6xl mx-auto flex justify-between items-center px-5 mb-2">
+          <form className="max-w-6xl mx-auto flex justify-between items-center px-5">
             <input
               onChange={(e) => setSearch(e.target.value)}
               className="w-full h-14 

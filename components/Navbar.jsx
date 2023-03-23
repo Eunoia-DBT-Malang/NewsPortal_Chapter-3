@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import TodayDate from "./Date";
-import NavLinks from "./NavLinks";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -15,12 +14,12 @@ const Navbar = () => {
     <nav
       className={`fixed w-full left-0 top-0 z-[999] md:px-24 ${
         sticky
-          ? "p-2 bg-white/90 text-black w-full fixed md:drop-shadow-md"
-          : "p-2 bg-white/90 text-black w-full fixed"
+          ? "bg-white/90 text-black w-full fixed md:drop-shadow-md"
+          : "bg-white/90 text-black w-full fixed"
       }`}
     >
       <header>
-        <div className="p-10 items-center">
+        <div className="p-8 items-center">
           <Link href="/" prefetch={false}>
             <h1
               className="font-serif 
@@ -44,7 +43,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <NavLinks />
+        {/* <NavLinks /> */}
       </header>
     </nav>
   );

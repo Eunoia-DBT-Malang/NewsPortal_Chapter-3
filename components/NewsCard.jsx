@@ -16,7 +16,7 @@ const NewsCard = ({ image }) => {
       />
       <div className="flex-1 flex flex-col">
         <div className="flex-1 flex flex-col p-5">
-          <h2 className="font-bold font-serif">{image.title}</h2>
+          <h2 className="font-bold">{image.title}</h2>
           <section className="mt-2 flex-1">
             <p className="text-xs line-clamp-6">{res}...</p>
           </section>
@@ -28,13 +28,13 @@ const NewsCard = ({ image }) => {
             <p>{image.publishedAt}</p>
           </footer>
         </div>
-        <button
+        <a href={image.url} target="_blank"
       className="bg-orange-400 h-10
         rounded-b-lg dark:text-gray-900
-         hover:bg-orange-500"
+         hover:bg-orange-500 text-center items-center p-2"
     >
       Read More
-    </button>
+    </a>
       </div>
     </div>
   );
