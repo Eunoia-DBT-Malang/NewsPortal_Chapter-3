@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
     const member = [
-        {name: "Aisya", link: "/Aisya"},
-        {name: "Alya", link: "/Alya"},
-        {name: "Celline", link: "/Celline"},
+        {name: "Aisya", link: "https://master--aisyakareninaa-portofolioweb.netlify.app/"},
+        {name: "Alya", link: "https://alyarusydam.vercel.app/"},
+        {name: "Celline", link: "https://web-portfolio-gilt-two.vercel.app/"},
         {name: "Gizella", link: "/Gizella"},
     ]
   return (
@@ -27,6 +27,7 @@ const Footer = () => {
                 text-center decoration-2 underline-offset-8 rounded-full p-2 
                 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out"
                 href={member.link}
+                target="_blank"
               >
                 {member.name}
               </a>

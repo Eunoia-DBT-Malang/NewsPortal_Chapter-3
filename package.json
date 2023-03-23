@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.2.0",
     "heroicons": "^2.0.16",
     "next": "13.2.4",
     "next-themes": "^0.2.1",
