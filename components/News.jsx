@@ -21,14 +21,15 @@ function News() {
   const [originalNews, setOriginalNews] = useState([]);
 
   const url =
-    "https://newsapi.org/v2/top-headlines/sources?apiKey=0434c0eca2b946889dea2b478ee7e562";
+    "https://newsapi.org/v2/everything?q=apple&from=2023-03-22&to=2023-03-22&sortBy=popularity&apiKey=0434c0eca2b946889dea2b478ee7e562";
 
   useEffect(() => {
     async function getNews() {
       try {
         const news = await fetch(url);
         const result = await news.json();
-        setNews(result.sources);
+        console.log(result.articles)
+        setNews(result.articles);
       } catch (error) {
         console.log(error);
       }
