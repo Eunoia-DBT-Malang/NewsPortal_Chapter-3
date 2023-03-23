@@ -77,12 +77,12 @@ function News() {
     } else {
       if (search !== "" && filterParam === "All") {
         filteredNews = news.filter((value) => {
-          return value.name.toLowerCase().match(new RegExp(searchTerm, "g"));
+          return value.title.toLowerCase().match(new RegExp(searchTerm, "g"));
         });
       } else if (search !== "" && filterParam !== "All") {
         filteredNews = news.filter((value) => {
           return (
-            value.name.toLowerCase().match(new RegExp(searchTerm, "g")) &&
+            value.title.toLowerCase().match(new RegExp(searchTerm, "g")) &&
             value.category === filterParam
           );
         });
@@ -122,7 +122,7 @@ function News() {
             </div>
           </form>
           <div className="max-w-lg rounded overflow-hidden my-4 mx-auto mt-0">
-            <div className="place-items-center">
+            {/* <div className="place-items-center">
               <select
                 onChange={(e) => {
                   setFilterParam(e.target.value);
@@ -135,7 +135,7 @@ function News() {
                 })}
               </select>
               <span className="focus"></span>
-            </div>
+            </div> */}
           </div>
           {isLoading && (
             <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
