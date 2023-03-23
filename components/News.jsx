@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { data } from "@/data/data";
-import ImageCard from "./ImageCard";
+import NewsCard from "./NewsCard";
 
 function News() {
   const [search, setSearch] = useState("");
@@ -9,26 +8,45 @@ function News() {
   const [searchParam] = useState(["name", "description", "category"]);
   const [labelCategory] = useState([
     { value: "All", label: "All (Filter By Category)" },
-    { value: "Ready", label: "Ready" },
-    { value: "Barang Bekas", label: "Barang Bekas" },
-    { value: "Pre-Order", label: "Pre-Order" },
+    { value: "general", label: "General" },
+    { value: "business", label: "Business" },
+    { value: "entertainment", label: "Entertainment" },
+    { value: "health", label: "Health" },
+    { value: "sceince", label: "Sceince" },
+    { value: "sports", label: "Sports" },
+    { value: "technology", label: "Technology" },
   ]);
   const [filterParam, setFilterParam] = useState("All");
-  const [news, setNews] = useState([])
+  const [news, setNews] = useState([]);
+  const [originalNews, setOriginalNews] = useState([]);
 
-  const url = 'https://newsapi.org/v2/top-headlines/sources?apiKey=0434c0eca2b946889dea2b478ee7e562'
+  const url =
+    "https://newsapi.org/v2/top-headlines/sources?apiKey=0434c0eca2b946889dea2b478ee7e562";
+
   useEffect(() => {
     async function getNews() {
       try {
-        const news = await fetch(url)
-        const result = await news.json()
-        setNews(result.sources)
+        const news = await fetch(url);
+        const result = await news.json();
+        setNews(result.sources);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     }
-    getNews()
-  }, [])
+    getNews();
+  }, []);
+
+  const filterType = async (category) => {
+    try {
+      await setFoods(
+        originalFoods.filter((item) => {
+          return item.category === category;
+        })
+      );
+    } catch (error) {
+      alert(error);
+    }
+  };
 
   function cari(news) {
     isLoading(true);
@@ -88,10 +106,7 @@ function News() {
     <div className="container mx-auto mt-60">
       <div className="flex flex-col">
         <div>
-          <form
-            className="max-w-6xl 
-    mx-auto flex justify-between items-center px-5 mb-2"
-          >
+          <form className="max-w-6xl mx-auto flex justify-between items-center px-5 mb-2">
             <input
               onChange={(e) => setSearch(e.target.value)}
               className="w-full h-14 
@@ -105,43 +120,43 @@ function News() {
               <p>{news.length} News found</p>
             </div>
           </form>
+          <div className="max-w-lg rounded overflow-hidden my-4 mx-auto mt-0">
+            <div className="place-items-center">
+              <select
+                onChange={(e) => {
+                  setFilterParam(e.target.value);
+                }}
+                className="custom-select px-4 py-3 rounded-md bg-white/70 text-gray-500"
+                aria-label="Filter News By Category"
+              >
+                {labelCategory.map((item) => {
+                  return <option value={item.value}>{item.label}</option>;
+                })}
+              </select>
+              <span className="focus"></span>
+            </div>
+          </div>
+          {isLoading && (
+            <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
+              Loading News Feed...
+            </div>
+          )}
+          {!isLoading && news.length === 0 && (
+            <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
+              No News Found
+            </div>
+          )}
+          {news.length !== 0 && (
+            <main className="mx-0 lg:mx-[5%] grid 
+            grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+            p-10 gap-10">
+              {news.map((image) => (
+                <NewsCard key={image.id} image={image} coba={image.image} />
+              ))}
+            </main>
+          )}
         </div>
       </div>
-      <div className="max-w-lg rounded overflow-hidden my-4 mx-auto mt-0 space-x-4">
-        <div className="place-items-center">
-          <select
-            onChange={(e) => {
-              setFilterParam(e.target.value);
-            }}
-            className="custom-select px-4 py-3 rounded-md bg-white/70 text-gray-500"
-            aria-label="Filter News By Category"
-          >
-            {labelCategory.map((item) => {
-              return <option value={item.value}>{item.label}</option>;
-            })}
-          </select>
-          <span className="focus"></span>
-        </div>
-      </div>
-      {isLoading && (
-        <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
-          Loading News Feed...
-        </div>
-      )}
-      {!isLoading && news.length === 0 && (
-        <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
-        No News Found
-      </div>
-      )}
-      {news.length !== 0 && (
-        <div
-          className="grid grid-cols-2 lg:grid-cols-4"
-        >
-          {news.map((image) => (
-            <ImageCard key={image.id} image={image} coba={image.image} />
-          ))}
-        </div>
-      )}
     </div>
   );
 }

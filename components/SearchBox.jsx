@@ -16,7 +16,7 @@ function SearchBox() {
     <form
       onSubmit={handleSearch}
       className="max-w-6xl 
-    mx-auto flex justify-between items-center px-5 mb-2"
+    mx-auto flex justify-between items-center px-5"
     >
       <input
         type="text"
