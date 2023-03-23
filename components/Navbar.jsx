@@ -3,7 +3,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import TodayDate from "./Date";
 import NavLinks from "./NavLinks";
-import SearchBox from "./SearchBox";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
