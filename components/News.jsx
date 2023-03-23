@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { data } from "@/data/data";
+// import { data } from "@/data/data";
 import ImageCard from "./ImageCard";
 
 function News() {
   const [search, setSearch] = useState("");
   const [isLoading] = useState(false);
-  const [setShowModal] = useState(false);
   const [q] = useState("");
   const [searchParam] = useState(["name", "description", "category"]);
   const [labelCategory] = useState([
@@ -23,7 +22,6 @@ function News() {
       try {
         const news = await fetch(url)
         const result = await news.json()
-        console.log(result.sources)
         setNews(result.sources)
       } catch (error) {
         console.log(error)
@@ -130,13 +128,14 @@ function News() {
           Loading News Feed...
         </div>
       )}
-      {!isLoading && data.length === 0 && (
-        <h1 className="text-5xl text-center mx-auto mt-32">No News Found</h1>
+      {!isLoading && news.length === 0 && (
+        <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
+        No News Found
+      </div>
       )}
-      {data.length !== 0 && (
+      {news.length !== 0 && (
         <div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4"
-          onClick={() => setShowModal(true)}
+          className="grid grid-cols-2 lg:grid-cols-4"
         >
           {news.map((image) => (
             <ImageCard key={image.id} image={image} coba={image.image} />
