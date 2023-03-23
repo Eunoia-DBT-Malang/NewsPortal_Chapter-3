@@ -46,8 +46,6 @@ const Navbar = () => {
         </div>
 
         <NavLinks />
-
-        <SearchBox />
       </header>
     </nav>
   );
