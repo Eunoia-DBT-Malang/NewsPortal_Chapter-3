@@ -38,7 +38,7 @@ const Footer = () => {
         <ul className="mt-8 flex justify-center gap-6 md:gap-8">
           <li>
             <a
-              href="/"
+              href="https://facebook.com/smktelkkommalang"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
@@ -61,7 +61,7 @@ const Footer = () => {
 
           <li>
             <a
-              href="/"
+              href="https://instagram.com/smktelkommalang"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
@@ -84,7 +84,7 @@ const Footer = () => {
 
           <li>
             <a
-              href="/"
+              href="https://twitter.com/smktelkommalang"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
@@ -103,7 +103,7 @@ const Footer = () => {
 
           <li>
             <a
-              href="/"
+              href="https://github.com/Eunoia-DBT-Malang"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
