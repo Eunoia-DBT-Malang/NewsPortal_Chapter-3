@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import DarkModeButton from "./DarkModeButton";
 import TodayDate from "./Date";
 import NavLinks from "./NavLinks";
 import SearchBox from "./SearchBox";
@@ -40,7 +39,6 @@ const Navbar = () => {
           </Link>
 
           <div className="flex flex-col items-center justify-end space-x-2">
-            <DarkModeButton />
             <div className="font-thin text-md mt-2">
               <TodayDate />
             </div>
