@@ -28,7 +28,7 @@ function News() {
       try {
         const news = await fetch(url);
         const result = await news.json();
-        console.log(result.articles)
+        console.log(result.articles);
         setNews(result.articles);
       } catch (error) {
         console.log(error);
@@ -105,7 +105,7 @@ function News() {
 
   return (
     <div className="container mx-auto mt-60">
-      <div className="flex flex-col">
+      <div className="flex flex-col mx-[10%]">
         <div>
           <form className="max-w-6xl mx-auto flex justify-between items-center px-5 mb-2">
             <input
@@ -137,26 +137,28 @@ function News() {
               <span className="focus"></span>
             </div> */}
           </div>
-          {isLoading && (
-            <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
-              Loading News Feed...
-            </div>
-          )}
-          {!isLoading && news.length === 0 && (
-            <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
-              No News Found
-            </div>
-          )}
-          {news.length !== 0 && (
-            <main className="mx-0 lg:mx-[5%] grid 
-            grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-            p-10 gap-10">
-              {news.map((image) => (
-                <NewsCard key={image.id} image={image} coba={image.image} />
-              ))}
-            </main>
-          )}
         </div>
+        {isLoading && (
+          <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
+            Loading News Feed...
+          </div>
+        )}
+        {!isLoading && news.length === 0 && (
+          <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
+            No News Found
+          </div>
+        )}
+        {news.length !== 0 && (
+          <main
+            className="grid 
+            grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+            p-10 gap-10"
+          >
+            {news.map((image) => (
+              <NewsCard key={image.id} image={image} coba={image.image} />
+            ))}
+          </main>
+        )}
       </div>
     </div>
   );
