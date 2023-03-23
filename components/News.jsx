@@ -15,12 +15,27 @@ function News() {
     { value: "Pre-Order", label: "Pre-Order" },
   ]);
   const [filterParam, setFilterParam] = useState("All");
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState([])
 
-  function cari(data) {
+  const url = 'https://newsapi.org/v2/top-headlines/sources?apiKey=0434c0eca2b946889dea2b478ee7e562'
+  useEffect(() => {
+    async function getNews() {
+      try {
+        const news = await fetch(url)
+        const result = await news.json()
+        console.log(result.sources)
+        setNews(result.sources)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getNews()
+  }, [])
+
+  function cari(news) {
     isLoading(true);
-    return data.filter((item) => {
-      if (data.category == filterParam) {
+    return news.filter((item) => {
+      if (news.category == filterParam) {
         return searchParam.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
@@ -39,36 +54,36 @@ function News() {
 
   useEffect(() => {
     const searchTerm = search.toLowerCase();
-    let filteredData;
+    let filteredNews;
     if (search === "" && filterParam === "All") {
-      setNews(data);
+      setNews(news);
     } else {
       if (search !== "" && filterParam === "All") {
-        filteredData = data.filter((value) => {
+        filteredNews = news.filter((value) => {
           return value.name.toLowerCase().match(new RegExp(searchTerm, "g"));
         });
       } else if (search !== "" && filterParam !== "All") {
-        filteredData = data.filter((value) => {
+        filteredNews = news.filter((value) => {
           return (
             value.name.toLowerCase().match(new RegExp(searchTerm, "g")) &&
             value.category === filterParam
           );
         });
       } else if (search === "" && filterParam === "All") {
-        filteredData = data.filter((value) => {
+        filteredNews = news.filter((value) => {
           return value.category === filterParam;
         });
       } else if (search === "" && filterParam !== "All") {
-        filteredData = data.filter((value) => {
+        filteredNews = news.filter((value) => {
           return value.category === filterParam;
         });
       }
-      setNews(filteredData);
+      setNews(filteredNews);
     }
   }, [filterParam, search]);
 
   useEffect(() => {
-    setNews(data);
+    setNews(news);
   }, []);
 
   return (
