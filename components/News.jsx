@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Header from "./Header";
 import NewsCard from "./NewsCard";
 
 function News() {
@@ -19,18 +20,17 @@ function News() {
   const [filterParam, setFilterParam] = useState("All");
   const [news, setNews] = useState([]);
   //   const [originalNews, setOriginalNews] = useState([]);
-  const today = new Date();
 
   const url =
-    `https://newsapi.org/v2/everything?q=apple&from=${today}&to=${today}&sortBy=popularity&apiKey=0434c0eca2b946889dea2b478ee7e562`;
+    `https://api.jsonbin.io/v3/b/641c9221c0e7653a058ef5c0`;
 
   useEffect(() => {
     async function getNews() {
       try {
         const news = await fetch(url);
         const result = await news.json();
-        console.log(result.articles);
-        setNews(result.articles);
+        console.log(result.record.articles);
+        setNews(result.record.articles);
       } catch (error) {
         console.log(error);
       }
@@ -108,7 +108,8 @@ function News() {
     <div className="container mx-auto mt-32">
       <div className="flex flex-col mx-[10%]">
         <div>
-          <form className="max-w-6xl mx-auto flex justify-between items-center px-5">
+          <Header/>
+          <form className="max-w-6xl mx-auto flex justify-between items-center px-5 -mt-60 md:-mt-40 lg:-mt-12">
             <input
               onChange={(e) => setSearch(e.target.value)}
               className="w-full h-14 
@@ -122,7 +123,7 @@ function News() {
               <p>{news.length} News found</p>
             </div>
           </form>
-          <div className="max-w-lg rounded overflow-hidden my-4 mx-auto mt-0">
+          <div className="max-w-lg rounded overflow-hidden mx-auto mt-0">
             {/* <div className="place-items-center">
               <select
                 onChange={(e) => {
