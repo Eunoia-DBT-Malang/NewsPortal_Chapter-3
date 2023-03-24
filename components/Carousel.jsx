@@ -25,61 +25,156 @@ const ImageCarousel = ({ images, children }) => {
         <h1 className="text-orange-500 font-bold text-center md:text-left lg:text-left text-xl md:text-3xl lg:text-5xl my-5">
           Headline News
         </h1>
-        <div className="flex flex-row">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              alt=""
-              className={`w-full h-full absolute opacity-0 transition-all ease-in duration-1000 ${
-                currentIndex === index ? "opacity-100" : ""
-              }`}
-            >
-              <div className="relative">
-                {/* Overlay */}
-                <div
-                  className="absolute w-full h-full text-gray-200 bg-black/40 flex flex-col justify-center"
-                >
-                  <div className="absolute bottom-8">
-                    <p className="px-8 text-sm italic mb-4">
-                      {image.author} - {image.publishedAt}
-                    </p>
-                    <h1 className="px-8 text-md md:text-3xl lg:text-4xl font-bold">
-                      {image.title}
-                    </h1>
+        <div className="container grid grid-cols-15 mx-auto mt-96">
+          <div className="flex flex-col justify-center col-span-12 align-middle bg-no-repeat bg-cover bg-gray-700 lg:col-span-6 lg:h-auto">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                alt=""
+                className={`w-full h-full absolute opacity-0 transition-all ease-in duration-1000 ${
+                  currentIndex === index ? "opacity-100" : ""
+                }`}
+              >
+                <div className="flex flex-col mx-auto overflow-hidden rounded">
+                  <img
+                    src={image.urlToImage}
+                    alt=""
+                    className="w-full max-h-[550px] bg-gray-500 rounded-lg"
+                  />
+                  <div className="p-6 pb-8 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-gray-50">
+                    <div className="space-y-2">
+                      <a
+                        rel="noopener noreferrer"
+                        href={image.url}
+                        className="inline-block text-2xl font-semibold sm:text-3xl"
+                      >
+                        {image.title}
+                      </a>
+                      <p className="text-xs text-gray-600">
+                        {image.author} - {image.publishedAt}
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <img
-                  className="w-full object-cover"
-                  key={index}
-                  src={image.urlToImage}
-                  alt="/"
-                />
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-row p-6 lg:col-span-6 lg:p-10 mt-[260px] gap-40">
+            <div className="flex flex-col col-span-12 divide-y divide-gray-300">
+              <div className="pt-6 pb-4 space-y-2">
+                <span>12 June</span>
+                <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+                  a!
+                </p>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  className="inline-flex items-center py-2 space-x-2 text-sm text-orange-500"
+                >
+                  <span>Read more</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+              <div className="pt-6 pb-4 space-y-2">
+                <span>12 June</span>
+                <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+                  a!
+                </p>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  className="inline-flex items-center py-2 space-x-2 text-sm text-orange-500"
+                >
+                  <span>Read more</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </a>
               </div>
             </div>
-          ))}
-        </div>
-        {/* <div>
-          <div className="relative">
-            <a
-              href="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/d89b0bc74cc33dda3d9dbd480864eaaa.jpg"
-              className="absolute w-full h-full text-gray-200 bg-black/40 flex flex-col justify-center"
-            >
-              <div className="absolute bottom-8">
-                <p className="px-4 text-sm italic mb-4">
-                  Daniel Oropeza - 2023-02-28T22:00:00Z
+            <div className="flex flex-col col-span-12 divide-y divide-gray-300">
+              <div className="pt-6 pb-4 space-y-2">
+                <span>12 June</span>
+                <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+                  a!
                 </p>
-                <h1 className="px-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
-                  Get These Gift Card Deals While You Can
-                </h1>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  className="inline-flex items-center py-2 space-x-2 text-sm text-orange-500"
+                >
+                  <span>Read more</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </a>
               </div>
-            </a>
-            <img
-              className="w-full object-cover"
-              src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/d89b0bc74cc33dda3d9dbd480864eaaa.jpg"
-              alt="/"
-            />
+              <div className="pt-6 pb-4 space-y-2">
+                <span>12 June</span>
+                <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+                  a!
+                </p>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  className="inline-flex items-center py-2 space-x-2 text-sm text-orange-500"
+                >
+                  <span>Read more</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
-        </div> */}
+        </div>
+        <div className="container grid grid-cols-12 mx-auto mt-96"></div>
         {children}
       </div>
     </div>

@@ -107,9 +107,9 @@ function News() {
     <div className="container mx-auto">
       <div className="flex flex-col mx-[10%]">
         <div>
-          {/* <div className="z-0">
+          <div className="mb-[420px]">
             <Header />
-          </div> */}
+          </div>
           <form className="max-w-6xl mx-auto flex justify-between items-center px-5 -mt-60 md:-mt-40 lg:-mt-12 z-[999]">
             <input
               onChange={(e) => setSearch(e.target.value)}
