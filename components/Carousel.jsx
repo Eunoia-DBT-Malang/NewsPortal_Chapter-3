@@ -36,8 +36,7 @@ const ImageCarousel = ({ images, children }) => {
             >
               <div className="relative">
                 {/* Overlay */}
-                <a
-                  href={image.url}
+                <div
                   className="absolute w-full h-full text-gray-200 bg-black/40 flex flex-col justify-center"
                 >
                   <div className="absolute bottom-8">
@@ -48,7 +47,7 @@ const ImageCarousel = ({ images, children }) => {
                       {image.title}
                     </h1>
                   </div>
-                </a>
+                </div>
                 <img
                   className="w-full object-cover"
                   key={index}

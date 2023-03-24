@@ -21,8 +21,7 @@ function News() {
   const [news, setNews] = useState([]);
   //   const [originalNews, setOriginalNews] = useState([]);
 
-  const url =
-    `https://api.jsonbin.io/v3/b/641c9221c0e7653a058ef5c0`;
+  const url = `https://api.jsonbin.io/v3/b/641c9221c0e7653a058ef5c0`;
 
   useEffect(() => {
     async function getNews() {
@@ -105,11 +104,13 @@ function News() {
   }, []);
 
   return (
-    <div className="container mx-auto mt-32">
+    <div className="container mx-auto">
       <div className="flex flex-col mx-[10%]">
         <div>
-          <Header/>
-          <form className="max-w-6xl mx-auto flex justify-between items-center px-5 -mt-60 md:-mt-40 lg:-mt-12">
+          {/* <div className="z-0">
+            <Header />
+          </div> */}
+          <form className="max-w-6xl mx-auto flex justify-between items-center px-5 -mt-60 md:-mt-40 lg:-mt-12 z-[999]">
             <input
               onChange={(e) => setSearch(e.target.value)}
               className="w-full h-14 

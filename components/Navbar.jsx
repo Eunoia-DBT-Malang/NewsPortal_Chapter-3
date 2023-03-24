@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Bar from "./Bar";
 import TodayDate from "./Date";
 
 const Navbar = () => {
@@ -11,18 +12,21 @@ const Navbar = () => {
     });
   }, []);
   return (
-    <nav
-      className={`fixed w-full left-0 top-0 z-[999] md:px-24 ${
-        sticky
-          ? "bg-white/90 text-black w-full fixed md:drop-shadow-md"
-          : "bg-white/90 text-black w-full fixed"
-      }`}
-    >
+    <div>
+      <nav
+        className={`fixed w-full left-0 top-0 z-[999] md:px-24 ${
+          sticky
+            ? "bg-white/90 w-full fixed md:drop-shadow-md"
+            : "bg-white/90 w-full fixed"
+        }`}
+      >
+        <Bar/>
+      </nav>
       <header>
-        <div className="p-8 items-center">
+        <div className="p-8 items-center mt-12">
           <Link href="/" prefetch={false}>
             <h1
-              className="font-serif 
+              className=" font-bold
           text-4xl text-center"
             >
               The{" "}
@@ -42,10 +46,8 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-
-        {/* <NavLinks /> */}
       </header>
-    </nav>
+    </div>
   );
 };
 
