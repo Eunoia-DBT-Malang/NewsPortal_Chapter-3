@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const WEATHER_API_KEY = 'e90e010c5e156112a0a925b04ea4a10e';
-const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/weather?q=Surakarta&appid=${WEATHER_API_KEY}`;
+const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/weather?q=Malang&appid=${WEATHER_API_KEY}`;
 
 function Weather() {
   const [temperature, setTemperature] = useState(null);

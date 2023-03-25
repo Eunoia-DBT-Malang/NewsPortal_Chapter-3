@@ -3,7 +3,7 @@ import React from "react";
 const Sosmed = () => {
   return (
     <div>
-      <ul className="flex justify-center gap-6 mt-8 sm:mt-0 lg:justify-end">
+      <ul className="flex justify-center gap-6 sm:mt-4 md:mt-0 lg:justify-end">
         <li>
           <a
             href="https://facebook.com/smktelkommalang"
@@ -12,7 +12,6 @@ const Sosmed = () => {
             className="text-gray-700 transition hover:text-orange-500"
           >
             <span className="sr-only">Facebook</span>
-
             <svg
               className="w-6 h-6"
               fill="currentColor"
@@ -36,7 +35,6 @@ const Sosmed = () => {
             className="text-gray-700 transition hover:text-orange-500"
           >
             <span className="sr-only">Instagram</span>
-
             <svg
               className="w-6 h-6"
               fill="currentColor"
@@ -60,7 +58,6 @@ const Sosmed = () => {
             className="text-gray-700 transition hover:text-orange-500"
           >
             <span className="sr-only">Twitter</span>
-
             <svg
               className="w-6 h-6"
               fill="currentColor"
@@ -80,7 +77,6 @@ const Sosmed = () => {
             className="text-gray-700 transition hover:text-orange-500"
           >
             <span className="sr-only">GitHub</span>
-
             <svg
               className="w-6 h-6"
               fill="currentColor"

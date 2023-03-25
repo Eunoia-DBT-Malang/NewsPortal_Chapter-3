@@ -23,11 +23,11 @@ const Navbar = () => {
         <Bar/>
       </nav>
       <header>
-        <div className="p-8 items-center mt-12">
+        <div className="p-8 items-center mt-20 md:mt-12">
           <Link href="/" prefetch={false}>
             <h1
               className=" font-bold
-          text-4xl text-center"
+          md:text-4xl text-2xl text-center"
             >
               The{" "}
               <span

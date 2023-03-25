@@ -107,10 +107,8 @@ function News() {
     <div className="container mx-auto">
       <div className="flex flex-col mx-[10%]">
         <div>
-          <div className="mb-[420px]">
-            <Header />
-          </div>
-          <form className="max-w-6xl mx-auto flex justify-between items-center px-5 -mt-60 md:-mt-40 lg:-mt-12 z-[999]">
+          <Header />
+          <form className="max-w-6xl mx-auto flex justify-between items-center px-5 -mt-60 md:-mt-40 lg:-mt-12">
             <input
               onChange={(e) => setSearch(e.target.value)}
               className="w-full h-14 
@@ -125,20 +123,6 @@ function News() {
             </div>
           </form>
           <div className="max-w-lg rounded overflow-hidden mx-auto mt-0">
-            {/* <div className="place-items-center">
-              <select
-                onChange={(e) => {
-                  setFilterParam(e.target.value);
-                }}
-                className="custom-select px-4 py-3 rounded-md bg-white/70 text-gray-500"
-                aria-label="Filter News By Category"
-              >
-                {labelCategory.map((item) => {
-                  return <option value={item.value}>{item.label}</option>;
-                })}
-              </select>
-              <span className="focus"></span>
-            </div> */}
           </div>
         </div>
         {isLoading && (
