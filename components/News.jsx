@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import NewsCard from "./NewsCard";
+import TopTopics from "./TopTopics";
 
 function News() {
   const [search, setSearch] = useState("");
@@ -108,7 +109,8 @@ function News() {
       <div className="flex flex-col mx-[10%]">
         <div>
           <Header />
-          <form className="max-w-6xl mx-auto flex justify-between items-center px-5 -mt-60 md:-mt-40 lg:-mt-12">
+          <TopTopics/>
+          <form className="max-w-6xl mx-auto flex justify-between items-center px-5">
             <input
               onChange={(e) => setSearch(e.target.value)}
               className="w-full h-14 
