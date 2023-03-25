@@ -20,7 +20,6 @@ const ImageCarousel = ({ images, children }) => {
   }, []);
   // Render the current image
   return (
-    <div>
       <div className="relative w-full h-[450px] lg:h-[700px] scale-95">
         {" "}
         <h1 className="text-orange-500 font-bold text-center md:text-left lg:text-left text-xl md:text-3xl lg:text-5xl md:my-5 my-0">
@@ -61,20 +60,25 @@ const ImageCarousel = ({ images, children }) => {
             ))}
           </div>
         </div>
-        <div className="container grid grid-cols-12 mx-auto mt-96"></div>
+        <div className="container grid grid-cols-12 mx-auto md:mt-96 mt-40">
         {children}
-      </div>
-      <div className="container w-11/12 mx-auto my-10 lg:my-0">
+        </div>
+      <div className="container w-11/12 mx-auto md:my-10 lg:my-0">
+      <h1 className="underline 
+            decoration-6 decoration-orange-400 font-bold text-center text-md md:text-xl lg:text-3xl md:mt-8 my-0">
+          Top Topics
+        </h1>
         <div className="flex flex-wrap">
-          <div className="md:w-6/12 w-full py-10">
-            <span>12 June</span>
-            <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!
+          {data.map((data) => (
+          <div className="md:w-6/12 w-full md:py-10 px-8">
+            <span>{data.publishedAt}</span>
+            <h1 className="md:text-xl font-bold">{data.title}</h1>
+            <p className="text-sm md:text-md">
+              {data.description}
             </p>
             <a
               rel="noopener noreferrer"
-              href="#"
+              href={data.url}
               className="inline-flex items-center py-2 space-x-2 text-sm text-orange-500"
             >
               <span>Read more</span>
@@ -92,84 +96,7 @@ const ImageCarousel = ({ images, children }) => {
               </svg>
             </a>
           </div>
-          <div className="md:w-6/12 w-full py-10">
-            <span>12 June</span>
-            <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!
-            </p>
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="inline-flex items-center py-2 space-x-2 text-sm text-orange-500"
-            >
-              <span>Read more</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </a>
-          </div>
-          <div className="md:w-6/12 w-full py-10">
-            <span>12 June</span>
-            <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!
-            </p>
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="inline-flex items-center py-2 space-x-2 text-sm text-orange-500"
-            >
-              <span>Read more</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </a>
-          </div>
-          <div className="md:w-6/12 w-full py-10">
-            <span>12 June</span>
-            <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!
-            </p>
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="inline-flex items-center py-2 space-x-2 text-sm text-orange-500"
-            >
-              <span>Read more</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </a>
-          </div>
+          ))}
         </div>
       </div>
     </div>
