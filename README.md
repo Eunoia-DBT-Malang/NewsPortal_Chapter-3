@@ -32,12 +32,28 @@ Click on our [Repository](https://github.com/Eunoia-DBT-Malang/NewsPortal_Chapte
 ## Our Features
 <li> Responsive website
 <li> Comprehensive UI design
-<li> Sorting and filter by category
+<li> Real-time updated calendar
+<li> Headline automatic carousel
 <li> Light and dark mode
-<li> Vercel deployment
 
-## Documentation
-(screenshot web)
+## Documentation Dekstop
+### Navbar and Headline
+![mobile](https://user-images.githubusercontent.com/99931057/227699206-e86e7892-cc1b-4c8c-9ca7-c0988fd375d5.png)
+
+### News List
+![mobile (1)](https://user-images.githubusercontent.com/99931057/227699255-4a3c1806-d535-4889-92d0-a4bc21acf366.png)
+
+### Footer
+![mobile (2)](https://user-images.githubusercontent.com/99931057/227699284-8f98f40d-20f9-4ac1-af43-e69c8280bd16.png)
+
+## Documentation Mobile
+![mobile](https://user-images.githubusercontent.com/99931057/227710769-0dfe0152-fbe7-4bb8-b631-3624d8a9d92d.png)  
+
+![mobile (1)](https://user-images.githubusercontent.com/99931057/227710773-19271447-61d2-4711-ae40-2c94223eaf0b.png) 
+
+![mobile (2)](https://user-images.githubusercontent.com/99931057/227710775-3c37c791-c2c9-48ba-a7bc-ed005835f64c.png)
 
 ## Deployment
-(link vercel)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+
+Direct to our [news portal](https://eunoia-news-app.vercel.app/)
