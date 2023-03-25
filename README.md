@@ -32,12 +32,22 @@ Click on our [Repository](https://github.com/Eunoia-DBT-Malang/NewsPortal_Chapte
 ## Our Features
 <li> Responsive website
 <li> Comprehensive UI design
-<li> Sorting and filter by category
+<li> Real-time updated calendar
+<li> Headline automatic carousel
 <li> Light and dark mode
-<li> Vercel deployment
 
 ## Documentation
-(screenshot web)
+### Navbar and Headline
+![mobile](https://user-images.githubusercontent.com/99931057/227699206-e86e7892-cc1b-4c8c-9ca7-c0988fd375d5.png)
+
+### News List
+![mobile (1)](https://user-images.githubusercontent.com/99931057/227699255-4a3c1806-d535-4889-92d0-a4bc21acf366.png)
+
+### Footer
+![mobile (2)](https://user-images.githubusercontent.com/99931057/227699284-8f98f40d-20f9-4ac1-af43-e69c8280bd16.png)
+
 
 ## Deployment
-(link vercel)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+
+Direct to our [news portal](https://eunoia-news-app.vercel.app/)
