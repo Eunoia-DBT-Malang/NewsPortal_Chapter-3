@@ -3,15 +3,6 @@ import React from "react";
 import FooterSosmed from "./FooterSosmed";
 
 const Footer = () => {
-  const member = [
-    {
-      name: "Aisya",
-      link: "https://master--aisyakareninaa-portofolioweb.netlify.app/",
-    },
-    { name: "Alya", link: "https://alyarusydam.vercel.app/" },
-    { name: "Celline", link: "https://web-portfolio-gilt-two.vercel.app/" },
-    { name: "Gizella", link: "/Gizella" },
-  ];
   return (
     <footer aria-label="Site Footer" className="bg-gray-100">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
@@ -34,27 +25,17 @@ const Footer = () => {
         </div>
 
         <p className="mx-auto mt-4 max-w-md text-center leading-relaxed text-gray-500">
-          Website ini dibuat dengan sepenuh hati oleh
+          Website ini dibuat dengan segenap kemampuan kami
+        <a
+          href="/Team"
+          className="mt-8 hover:underline decoration-orange-400 
+                decoration-2 underline-offset-8 rounded-full p-2 
+                cursor-pointer font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out"
+        >
+          Kelompok 1 TEFA DBT Malang
+        </a>
         </p>
-
-        <nav aria-label="Footer Nav" className="mt-8">
-          <ul className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
-            {member.map((member, index) => (
-              <li key={index}>
-                <a
-                  className="hover:underline decoration-orange-400 
-                text-center decoration-2 underline-offset-8 rounded-full p-2 
-                cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out"
-                  href={member.link}
-                  target="_blank"
-                >
-                  {member.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <FooterSosmed/>
+        <FooterSosmed />
       </div>
     </footer>
   );

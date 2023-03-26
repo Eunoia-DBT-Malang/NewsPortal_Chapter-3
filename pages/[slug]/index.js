@@ -36,7 +36,7 @@ function Detail() {
           />
         )}
         <div className="px-10">
-          <h1 className="headerTitle px-0 no-underline pb-2">
+          <h1 className="px-0 no-underline pb-2">
             {news.title}
           </h1>
           <div className="flex divide-x-2 space-x-4">
