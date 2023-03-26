@@ -25,15 +25,15 @@ const Footer = () => {
         </div>
 
         <p className="mx-auto mt-4 max-w-md text-center leading-relaxed text-gray-500">
-          Website ini dibuat dengan segenap kemampuan kami
-        <a
-          href="/Team"
-          className="mt-8 hover:underline decoration-orange-400 
+          Made with all our ability and sincerity <br/>
+          <a
+            href="/Team"
+            className="mt-8 hover:underline decoration-orange-400 
                 decoration-2 underline-offset-8 rounded-full p-2 
                 cursor-pointer font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out"
-        >
-          Kelompok 1 TEFA DBT Malang
-        </a>
+          >
+            Group 1 TEFA DBT Malang
+          </a>
         </p>
         <FooterSosmed />
       </div>

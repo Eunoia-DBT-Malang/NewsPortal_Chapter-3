@@ -13,7 +13,7 @@ function Team() {
             Development team
           </p>
           <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl mb-8 md:mb-16">
-            People behind the scenes
+            Meet Our Team
           </h1>
           <div className="flex flex-row flex-wrap-reverse justify-center mt-8">
             <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-800 text-gray-100">
