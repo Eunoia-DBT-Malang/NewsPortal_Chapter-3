@@ -9,10 +9,10 @@ const NewsCard = ({ image }) => {
     hover:shadow-xl hover:bg-slate-200 
     transition-all duration-200 ease-out">
       <img
-        src={image.urlToImage}
-        alt=""
+        src={image.urlToImage || "image not defined"}
+        alt={image.title}
         className="h-56 
-        w-full object-cover rounded-t-lg shadow-md"
+        w-full object-cover rounded-t-lg shadow-md italic text-sm"
       />
       <div className="flex-1 flex flex-col">
         <div className="flex-1 flex flex-col p-5">
@@ -24,11 +24,11 @@ const NewsCard = ({ image }) => {
             className="text-xs text-right 
           ml-auto flex space-x-1 pt-5 italic text-gray-400"
           >
-            <p>{image.author} -</p>
-            <p>{image.publishedAt}</p>
+            <p>{image.author || "unknown"} -</p>
+            <p>{image.publishedAt || "not defined"}</p>
           </footer>
         </div>
-        <a href={image.url} target="_blank"
+        <a href={`/${image.title}`}
       className="bg-orange-400 h-10
         rounded-b-lg dark:text-gray-900
          hover:bg-orange-500 text-center items-center p-2"

@@ -10,7 +10,7 @@ function News() {
   const [q] = useState("");
   const [searchParam] = useState(["name", "description", "category"]);
   const [currentPage, setCurrentPage] = useState(0);
-const [newsPerPage] = useState(6);
+  const [newsPerPage] = useState(6);
   const [filterParam, setFilterParam] = useState("All");
   const [news, setNews] = useState([]);
 
@@ -21,7 +21,6 @@ const [newsPerPage] = useState(6);
       try {
         const news = await fetch(url);
         const result = await news.json();
-        console.log(result.record.articles);
         setNews(result.record.articles);
       } catch (error) {
         console.log(error);
