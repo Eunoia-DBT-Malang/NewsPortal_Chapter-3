@@ -1,0 +1,49 @@
+import React from "react";
+
+const BreadcrumbDetail = () => {
+  return (
+    <nav aria-label="Breadcrumb" class="flex" className="-mt-4">
+      <ol
+        role="list"
+        class="flex overflow-hidden rounded-lg border border-gray-200 text-gray-600"
+      >
+        <li class="flex items-center hover:underline">
+          <a
+            href="/"
+            class="flex h-10 items-center bg-gray-100 px-4 transition hover:text-gray-900"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              />
+            </svg>
+
+            <span class="ml-1.5 text-xs font-medium"> Home </span>
+          </a>
+        </li>
+
+        <li class="relative flex items-center hover:underline">
+          <span class="absolute inset-y-0 -left-px h-10 w-4 bg-gray-100 [clip-path:_polygon(0_0,_0%_100%,_100%_50%)]"></span>
+
+          <a
+            href=""
+            class="flex h-10 items-center bg-white pl-8 pr-4 text-xs font-medium transition hover:text-gray-900"
+          >
+            Detail
+          </a>
+        </li>
+      </ol>
+    </nav>
+  );
+};
+
+export default BreadcrumbDetail;
