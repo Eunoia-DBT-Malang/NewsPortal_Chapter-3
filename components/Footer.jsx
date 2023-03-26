@@ -30,7 +30,7 @@ const Footer = () => {
             href="/Team"
             className="mt-8 hover:underline decoration-orange-400 
                 decoration-2 underline-offset-8 rounded-full p-2 
-                cursor-pointer font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out"
+                cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out"
           >
             Group 1 TEFA DBT Malang
           </a>

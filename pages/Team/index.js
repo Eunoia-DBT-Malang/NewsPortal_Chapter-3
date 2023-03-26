@@ -109,7 +109,7 @@ function Team() {
                 <p className="text-xl font-semibold leading-snug">
                   Alya Maharistya
                 </p>
-                <p>Code Executor</p>
+                <p>User</p>
               </div>
               <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                 <a
