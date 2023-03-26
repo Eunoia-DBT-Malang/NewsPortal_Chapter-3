@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 import Header from "./Header";
 import NewsCard from "./NewsCard";
 import TopTopics from "./TopTopics";
@@ -8,19 +9,10 @@ function News() {
   const [isLoading] = useState(false);
   const [q] = useState("");
   const [searchParam] = useState(["name", "description", "category"]);
-  //   const [labelCategory] = useState([
-  //     { value: "All", label: "All (Filter By Category)" },
-  //     { value: "general", label: "General" },
-  //     { value: "business", label: "Business" },
-  //     { value: "entertainment", label: "Entertainment" },
-  //     { value: "health", label: "Health" },
-  //     { value: "sceince", label: "Sceince" },
-  //     { value: "sports", label: "Sports" },
-  //     { value: "technology", label: "Technology" },
-  //   ]);
+  const [currentPage, setCurrentPage] = useState(0);
+const [newsPerPage] = useState(6);
   const [filterParam, setFilterParam] = useState("All");
   const [news, setNews] = useState([]);
-  //   const [originalNews, setOriginalNews] = useState([]);
 
   const url = `https://api.jsonbin.io/v3/b/641c9221c0e7653a058ef5c0`;
 
@@ -38,17 +30,12 @@ function News() {
     getNews();
   }, []);
 
-  //   const filterType = async (category) => {
-  //     try {
-  //       await setFoods(
-  //         originalFoods.filter((item) => {
-  //           return item.category === category;
-  //         })
-  //       );
-  //     } catch (error) {
-  //       alert(error);
-  //     }
-  //   };
+  function paginate() {
+    const startIndex = currentPage * newsPerPage;
+    const endIndex = startIndex + newsPerPage;
+    const currentNews = news.slice(startIndex, endIndex);
+    return currentNews;
+  }
 
   function cari(news) {
     isLoading(true);
@@ -109,7 +96,7 @@ function News() {
       <div className="flex flex-col mx-[10%]">
         <div>
           <Header />
-          <TopTopics/>
+          <TopTopics />
           <form className="max-w-6xl mx-auto flex justify-between items-center px-5">
             <input
               onChange={(e) => setSearch(e.target.value)}
@@ -124,8 +111,7 @@ function News() {
               <p>{news.length} News found</p>
             </div>
           </form>
-          <div className="max-w-lg rounded overflow-hidden mx-auto mt-0">
-          </div>
+          <div className="max-w-lg rounded overflow-hidden mx-auto mt-0"></div>
         </div>
         {isLoading && (
           <div className="animated-pulse font-serif text-lg text-gray-400 text-center p-10">
@@ -143,11 +129,25 @@ function News() {
             grid-cols-1 md:grid-cols-2 lg:grid-cols-3
             p-10 gap-10"
           >
-            {news.map((image) => (
+            {paginate().map((image) => (
               <NewsCard key={image.id} image={image} coba={image.image} />
             ))}
           </main>
         )}
+        <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          pageCount={Math.ceil(news.length / newsPerPage)}
+          onPageChange={(data) => {
+            setCurrentPage(data.selected);
+          }}
+          containerClassName={"pagination"}
+          previousLinkClassName={"previous_page"}
+          nextLinkClassName={"next_page"}
+          disabledClassName={"pagination_disabled"}
+          activeClassName={"pagination_active"}
+          className="mx-auto text-center flex flex-row gap-4 mb-8"
+        />
       </div>
     </div>
   );
