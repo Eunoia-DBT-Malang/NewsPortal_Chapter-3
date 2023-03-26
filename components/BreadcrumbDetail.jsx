@@ -5,12 +5,12 @@ const BreadcrumbDetail = () => {
     <nav aria-label="Breadcrumb" class="flex" className="-mt-4">
       <ol
         role="list"
-        class="flex overflow-hidden rounded-lg border border-gray-200 text-gray-600"
+        class="flex overflow-hidden rounded-lg border text-gray-600 bg-gray-100 w-44"
       >
         <li class="flex items-center hover:underline">
           <a
             href="/"
-            class="flex h-10 items-center bg-gray-100 px-4 transition hover:text-gray-900"
+            class="flex h-10 items-center px-4 transition bg-white hover:text-gray-900"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,11 +32,11 @@ const BreadcrumbDetail = () => {
         </li>
 
         <li class="relative flex items-center hover:underline">
-          <span class="absolute inset-y-0 -left-px h-10 w-4 bg-gray-100 [clip-path:_polygon(0_0,_0%_100%,_100%_50%)]"></span>
+          <span class="absolute inset-y-0 -left-px h-10 w-4 bg-white [clip-path:_polygon(0_0,_0%_100%,_100%_50%)]"></span>
 
           <a
             href=""
-            class="flex h-10 items-center bg-white pl-8 pr-4 text-xs font-medium transition hover:text-gray-900"
+            class="flex h-10 items-center px-8 text-xs font-medium transition hover:text-gray-900"
           >
             Detail
           </a>
