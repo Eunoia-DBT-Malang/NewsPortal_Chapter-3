@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
+import Content from "./Content";
 import Header from "./Header";
 import NewsCard from "./NewsCard";
 import TopTopics from "./TopTopics";
@@ -96,6 +97,7 @@ function News() {
         <div>
           <Header />
           <TopTopics />
+          <Content />
           <form className="max-w-6xl mx-auto flex justify-between items-center px-5">
             <input
               onChange={(e) => setSearch(e.target.value)}
