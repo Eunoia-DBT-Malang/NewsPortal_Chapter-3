@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import BreadcrumbDetail from "@/components/BreadcrumbDetail";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NotFound from "../404";
 
 async function getNews() {
   const data = await fetch(
@@ -31,7 +32,6 @@ function Detail() {
   if (loading) {
     return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-orange-600 m-auto mt-[75%] md:mt-[20%]"/>;
   }
-
   return (
     <>
       <Navbar/>
@@ -57,7 +57,7 @@ function Detail() {
           </div>
           <p className="pt-4">{news.description}</p>
         </div>
-      </section> : <section className="flex items-center h-full sm:p-16 text-gray-800 mt-24">
+      </section> : <section className="flex items-center h-full sm:p-16 text-gray-800">
     <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-40 h-40 text-gray-400">
         <path fill="currentColor" d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z"></path>
