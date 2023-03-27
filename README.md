@@ -36,7 +36,6 @@ Click on our [Repository](https://github.com/Eunoia-DBT-Malang/NewsPortal_Chapte
 <li> Real-time weather and temperature report
 <li> User device location
 <li> Headline automatic carousel
-<li> Light and dark mode
 
 ## Documentation Dekstop
 ### Navbar and Headline
