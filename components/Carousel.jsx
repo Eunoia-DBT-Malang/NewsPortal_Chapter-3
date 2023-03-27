@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const ImageCarousel = ({ images, children }) => {
   // Use the state hook to keep track of the current image index
-  console.log(images);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Use the effect hook to update the current index every 3 seconds
@@ -44,7 +43,7 @@ const ImageCarousel = ({ images, children }) => {
                     <div className="space-y-2">
                       <a
                         rel="noopener noreferrer"
-                        href={image.url}
+                        href={`/${image.title}`}
                         className="inline-block text-2xl font-semibold sm:text-3xl"
                       >
                         {image.title}

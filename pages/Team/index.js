@@ -1,7 +1,6 @@
 import Bar from "@/components/Bar";
 import Breadcrumb from "@/components/Breadcrumb";
 import React from "react";
-import Footer from "@/components/Footer";
 
 function Team() {
   return (
