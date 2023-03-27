@@ -3,6 +3,7 @@ import TodayDate from "./Date";
 import Sosmed from "./Sosmed";
 import Weather from "./Weather";
 
+
 const Bar = () => {
   return (
     <div className="py-3 border-t border-gray-100 sm:flex sm:items-center sm:justify-between mx-20">
@@ -25,7 +26,9 @@ const Bar = () => {
           </div>
         </div>
       </nav>
+
       <Sosmed />
+      {/* <DarkModeButton /> */}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Bar from "@/components/Bar";
 import BreadcrumbDetail from "@/components/BreadcrumbDetail";
 import Navbar from "@/components/Navbar";
+import NotFound from "../404";
 
 async function getNews() {
   const data = await fetch(
@@ -33,7 +34,7 @@ function Detail() {
   }
 
   if (!news) {
-    return <div>Item not found</div>;
+    return <NotFound/>;
   }
   return (
     <>
