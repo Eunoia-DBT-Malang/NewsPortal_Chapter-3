@@ -2,7 +2,6 @@ import React from "react";
 
 const FooterSosmed = () => {
   return (
-    <div>
       <ul className="mt-8 flex justify-center gap-6 md:gap-8">
         <li>
           <a
@@ -92,7 +91,6 @@ const FooterSosmed = () => {
           </a>
         </li>
       </ul>
-    </div>
   );
 };
 

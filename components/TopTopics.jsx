@@ -3,14 +3,14 @@ import { data } from './data'
 
 const TopTopics = () => {
   return (
-    <div className="container w-11/12 mx-auto md:my-10 lg:my-8">
+    <section className="container w-11/12 mx-auto md:my-10 lg:my-8">
       <h1 className="underline 
             decoration-6 decoration-orange-400 font-bold text-center text-xl md:text-2xl lg:text-3xl my-4 md:mt-0 -mt-20">
           Hot News
         </h1>
         <div className="flex flex-wrap">
           {data.map((data) => (
-          <div className="md:w-6/12 w-full md:py-10 py-4 px-8">
+          <div className="md:w-6/12 w-full md:py-10 py-4 md:px-8">
             <span>{data.publishedAt}</span>
             <h1 className="md:text-xl font-bold">{data.title}</h1>
             <p className="text-sm md:text-md">
@@ -38,7 +38,7 @@ const TopTopics = () => {
           </div>
           ))}
         </div>
-      </div>
+      </section>
   )
 }
 

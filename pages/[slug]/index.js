@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Bar from "@/components/Bar";
 import BreadcrumbDetail from "@/components/BreadcrumbDetail";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import NotFound from "../404";
 
 async function getNews() {
@@ -30,7 +31,7 @@ function Detail() {
   }, [slug]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <NotFound/>;
   }
 
   if (!news) {
@@ -38,31 +39,31 @@ function Detail() {
   }
   return (
     <>
-      {/* <Bar /> */}
       <Navbar/>
-      <div className="items-center justify-center p-4 sm:p-10 w-[260px] mx-auto">
+      <div className="items-center justify-center p-4 sm:p-10 w-[260px] mx-20 md:mx-auto">
       <BreadcrumbDetail />
       </div>
-      <section className="flex flex-col lg:flex-row pb-24 px-0 lg:px-10">
+      <section className="flex flex-col lg:flex-row pb-24 px-0 md:mx-40 sm:mx-auto lg:px-10 md:mb-8">
         {/* {news.image && ( */}
         <img
-          className="h-50 max-w-md 
-          mx-auto md:max-w-lg lg:max-w-xl 
-          object-cover rounded-lg shadow-md"
-          src={news.urlToImage}
-          alt={news.title}
+          className="h-50 
+          mx-auto md:max-w-md lg:max-w-md 
+          object-cover md:rounded-lg shadow-md md:block hidden"
+          src={news.urlToImage || "image not found"}
+          alt={news.title }
         />
         {/* )} */}
-        <div className="px-10">
-          <h1 className="headerTitle px-0 no-underline pb-2">{news.title}</h1>
+        <div className="px-4 md:px-10">
+          <h1 className="headerTitle px-0 no-underline pb-8">{news.title}</h1>
           <div className="flex divide-x-2 space-x-4">
-            <h2 className="font-bold">By: {news.author || "unknown"}</h2>
-            <h2 className="font-bold pl-2">Source: {news.url}</h2>
-            <p className="pl-4">{news.publishedAt}</p>
+            <h2 className="font-bold text-xs md:text-md">By: {news.author || "unknown"}</h2>
+            <h2 className="font-bold pl-2 text-xs md:text-md md:max-w-md truncate">Source: <a href={news.url} className="hover:underline font-light italic">{news.url}</a></h2>
+            <p className="pl-4 text-xs md:text-md">{news.publishedAt}</p>
           </div>
           <p className="pt-4">{news.description}</p>
         </div>
       </section>
+      <Footer/>
     </>
   );
 }

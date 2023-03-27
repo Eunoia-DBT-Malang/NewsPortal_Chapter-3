@@ -10,7 +10,6 @@ export default function Header() {
       try {
         const news = await fetch(url);
         const result = await news.json();
-        console.log(result.record.articles);
         setNews(result.record.articles);
       } catch (error) {
         console.log(error);

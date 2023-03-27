@@ -3,10 +3,9 @@ import TodayDate from "./Date";
 import Sosmed from "./Sosmed";
 import Weather from "./Weather";
 
-
 const Bar = () => {
   return (
-    <div className="py-3 border-t border-gray-100 sm:flex sm:items-center sm:justify-between mx-20">
+    <section className="py-3 border-t border-gray-100 sm:flex sm:items-center sm:justify-between mx-20">
       <nav aria-label="Footer Navigation - Support">
         <div className="flex flex-wrap justify-center gap-2 text-xs lg:justify-end mb-4 md:mb-0">
           <Weather/>
@@ -26,10 +25,8 @@ const Bar = () => {
           </div>
         </div>
       </nav>
-
       <Sosmed />
-      {/* <DarkModeButton /> */}
-    </div>
+    </section>
   );
 };
 

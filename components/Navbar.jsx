@@ -12,7 +12,7 @@ const Navbar = () => {
     });
   }, []);
   return (
-    <div>
+    <>
       <nav
         className={`fixed w-full left-0 top-0 z-[999] md:px-24 ${
           sticky
@@ -20,7 +20,7 @@ const Navbar = () => {
             : "bg-white/90 w-full fixed"
         }`}
       >
-        <Bar/>
+        <Bar />
       </nav>
       <header>
         <div className="p-8 items-center mt-20 md:mt-12">
@@ -47,7 +47,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-    </div>
+    </>
   );
 };
 
