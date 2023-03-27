@@ -14,6 +14,7 @@ function News() {
   const [newsPerPage] = useState(6);
   const [filterParam, setFilterParam] = useState("All");
   const [news, setNews] = useState([]);
+  const [orginalNews, setOriginalNews] = useState([]);
 
   const url = `https://api.jsonbin.io/v3/b/641c9221c0e7653a058ef5c0`;
 
@@ -23,6 +24,7 @@ function News() {
         const news = await fetch(url);
         const result = await news.json();
         setNews(result.record.articles);
+        setOriginalNews(result.record.articles);
       } catch (error) {
         console.log(error);
       }
@@ -64,7 +66,7 @@ function News() {
       setNews(news);
     } else {
       if (search !== "" && filterParam === "All") {
-        filteredNews = news.filter((value) => {
+        filteredNews = orginalNews.filter((value) => {
           return value.title.toLowerCase().match(new RegExp(searchTerm, "g"));
         });
       } 

@@ -14,7 +14,7 @@ function Weather() {
 
   return (
     <div className='flex gap-1'>
-        <h1 className='text-clip overflow-x-hidden w-[22px]'>{temperature ? `${temperature}` : 'Loading...'}</h1>
+        <h1 className='text-clip overflow-x-hidden w-[21.8px]'>{temperature ? `${temperature}` : 'Loading...'}</h1>
         <h2> °C</h2>
     </div>
   );
