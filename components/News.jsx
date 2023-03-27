@@ -14,7 +14,7 @@ function News() {
   const [newsPerPage] = useState(6);
   const [filterParam, setFilterParam] = useState("All");
   const [news, setNews] = useState([]);
-  const [orginalNews, setOriginalNews] = useState([]);
+  const [originalNews, setOriginalNews] = useState([]);
 
   const url = `https://api.jsonbin.io/v3/b/641c9221c0e7653a058ef5c0`;
 
@@ -66,7 +66,7 @@ function News() {
       setNews(news);
     } else {
       if (search !== "" && filterParam === "All") {
-        filteredNews = orginalNews.filter((value) => {
+        filteredNews = originalNews.filter((value) => {
           return value.title.toLowerCase().match(new RegExp(searchTerm, "g"));
         });
       } 
