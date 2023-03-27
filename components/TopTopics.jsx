@@ -3,7 +3,7 @@ import { data } from './data'
 
 const TopTopics = () => {
   return (
-    <div className="container w-11/12 mx-auto md:my-10 lg:my-8">
+    <section className="container w-11/12 mx-auto md:my-10 lg:my-8">
       <h1 className="underline 
             decoration-6 decoration-orange-400 font-bold text-center text-xl md:text-2xl lg:text-3xl my-4 md:mt-0 -mt-20">
           Hot News
@@ -38,7 +38,7 @@ const TopTopics = () => {
           </div>
           ))}
         </div>
-      </div>
+      </section>
   )
 }
 

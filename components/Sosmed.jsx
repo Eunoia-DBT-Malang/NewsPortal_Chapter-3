@@ -2,7 +2,6 @@ import React from "react";
 
 const Sosmed = () => {
   return (
-    <div>
       <ul className="flex justify-center gap-6 sm:mt-4 md:mt-0 lg:justify-end">
         <li>
           <a
@@ -92,7 +91,6 @@ const Sosmed = () => {
           </a>
         </li>
       </ul>
-    </div>
   );
 };
 

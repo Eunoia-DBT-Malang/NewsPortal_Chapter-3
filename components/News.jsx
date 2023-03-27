@@ -67,22 +67,7 @@ function News() {
         filteredNews = news.filter((value) => {
           return value.title.toLowerCase().match(new RegExp(searchTerm, "g"));
         });
-      } else if (search !== "" && filterParam !== "All") {
-        filteredNews = news.filter((value) => {
-          return (
-            value.title.toLowerCase().match(new RegExp(searchTerm, "g")) &&
-            value.category === filterParam
-          );
-        });
-      } else if (search === "" && filterParam === "All") {
-        filteredNews = news.filter((value) => {
-          return value.category === filterParam;
-        });
-      } else if (search === "" && filterParam !== "All") {
-        filteredNews = news.filter((value) => {
-          return value.category === filterParam;
-        });
-      }
+      } 
       setNews(filteredNews);
     }
   }, [filterParam, search]);
@@ -92,7 +77,7 @@ function News() {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <section className="container mx-auto">
       <div className="flex flex-col mx-[10%]">
         <div>
           <Header />
@@ -150,7 +135,7 @@ function News() {
           className="mx-auto text-center flex flex-row gap-4 mb-8"
         />
       </div>
-    </div>
+    </section>
   );
 }
 

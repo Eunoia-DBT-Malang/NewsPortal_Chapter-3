@@ -9,12 +9,13 @@ function Weather() {
   useEffect(() => {
     fetch(WEATHER_API_URL)
       .then(response => response.json())
-      .then(data => setTemperature(data.main.temp));
+      .then(data => setTemperature(data.main.temp - 273.15));
   }, []);
 
   return (
-    <div>
-        <h1>{temperature ? `${temperature} K` : 'Loading...'}</h1>
+    <div className='flex gap-1'>
+        <h1 className='text-clip overflow-x-hidden w-[22px]'>{temperature ? `${temperature}` : 'Loading...'}</h1>
+        <h2> °C</h2>
     </div>
   );
 }

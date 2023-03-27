@@ -46,7 +46,7 @@ function Detail() {
         {/* {news.image && ( */}
         <img
           className="h-50 
-          mx-auto md:max-w-lg lg:max-w-xl 
+          mx-auto md:max-w-md lg:max-w-md 
           object-cover md:rounded-lg shadow-md md:block hidden"
           src={news.urlToImage || "image not found"}
           alt={news.title }

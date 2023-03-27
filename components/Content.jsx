@@ -8,22 +8,21 @@ const Content = () => {
     {date: " Mar 20, 2023 ", ket: " 5 min read ", title1: '"humanity is on thin ice" - CBSNEWS', title2: "", media: "/humanity.mp4", link: "https://www.cbsnews.com/video/new-attack-targets-us-base-in-syria-following-american-airstrikes-over-contractors-death/?intcid=CNM-00-10abd1h", desc: 'The world must take action to "defuse the climate time bomb," the United Nations secretary-general.'}
   ]
   return (
-<section>
-  <div class="relative mx-auto max-w-7xl w-11/12">
-    <div class="grid max-w-lg md:gap-8 mx-auto mt-8 md:mt-12 lg:grid-cols-2 lg:max-w-none">
+  <section className="relative mx-auto max-w-7xl w-11/12">
+    <div className="grid max-w-lg md:gap-8 mx-auto mt-8 md:mt-12 lg:grid-cols-2 lg:max-w-none">
       {content.map((content) => (
-      <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
+      <div className="flex flex-col mb-12 overflow-hidden cursor-pointer">
         <a>
-          <div class="flex-shrink-0">
-            <video class="object-cover w-full h-48 rounded-lg" src={content.media} controls/>
+          <div className="flex-shrink-0">
+            <video className="object-cover w-full h-48 rounded-lg" src={content.media} controls/>
           </div>
         </a>
-        <div class="flex flex-col justify-between flex-1">
+        <div className="flex flex-col justify-between flex-1">
           <a>{}</a>
-          <div class="flex-1">
+          <div className="flex-1">
             <a>
-              <div class="flex pt-6 space-x-1 text-sm text-gray-500">
-                <time datetime="2023-03-24">{content.date}</time>
+              <div className="flex pt-6 space-x-1 text-sm text-gray-500">
+                <time dateTime="2023-03-24">{content.date}</time>
                 <span aria-hidden="true"> · </span>
                 <span> {content.ket} </span>
               </div>
@@ -58,8 +57,7 @@ const Content = () => {
       </div>
       ))}
     </div>
-  </div>
-</section>
+  </section>
   )
 }
 
