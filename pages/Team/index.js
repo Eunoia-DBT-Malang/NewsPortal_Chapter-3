@@ -26,7 +26,7 @@ function Team() {
                 <p className="text-xl font-semibold leading-snug">
                   Aisya Karenina
                 </p>
-                <p>Visual Designer</p>
+                <p>Documentation and Designer</p>
               </div>
               <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                 <a
