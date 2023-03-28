@@ -77,7 +77,7 @@ function News() {
   useEffect(() => {
     setNews(news);
   }, []);
-
+  
   return (
     <section className="container mx-auto">
       <div className="flex flex-col mx-[10%]">

@@ -17,6 +17,7 @@ function Detail() {
   const { slug } = router.query;
   const [news, setNews] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -24,6 +25,7 @@ function Detail() {
       const item = data.find((e) => e.title === slug);
       setNews(item);
       setLoading(false);
+      setError(false);
     }
     fetchData();
   }, [slug]);
@@ -31,13 +33,9 @@ function Detail() {
   if (loading) {
     return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-orange-600 m-auto mt-[75%] md:mt-[20%]"/>;
   }
-  return (
-    <>
-      <Navbar/>
-      <div className="items-center justify-center p-4 sm:p-10 w-[260px] mx-20 md:mx-auto">
-      <BreadcrumbDetail />
-      </div>
-      {!news ? <section className="flex items-center h-full sm:p-16 text-gray-800">
+  
+  if(error) {
+    return <section className="flex items-center h-full sm:p-16 text-gray-800">
     <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-40 h-40 text-gray-400">
         <path fill="currentColor" d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z"></path>
@@ -48,8 +46,15 @@ function Detail() {
       <p className="text-3xl">News not found</p>
       <a rel="noopener noreferrer" href="/" className="px-8 py-3 font-semibold rounded bg-orange-600 text-gray-50">Back to home</a>
     </div>
-  </section> : <section className="flex flex-col lg:flex-row pb-24 px-0 md:mx-40 sm:mx-auto lg:px-10 md:mb-8">
-        {/* {news.image && ( */}
+  </section>
+  }
+  return (
+    <>
+      <Navbar/>
+      <div className="items-center justify-center p-4 sm:p-10 w-[260px] mx-20 md:mx-auto">
+      <BreadcrumbDetail />
+      </div>
+      {!news ? <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-orange-600 my-24 mx-auto"/> : <section className="flex flex-col lg:flex-row pb-24 px-0 md:mx-40 sm:mx-auto lg:px-10 md:mb-8">
         <img
           className="h-50 
           mx-auto md:max-w-md lg:max-w-md 
@@ -57,7 +62,6 @@ function Detail() {
           src={news.urlToImage || "image not found"}
           alt={news.title }
         />
-        {/* )} */}
         <div className="px-4 md:px-10">
           <h1 className="headerTitle px-0 no-underline pb-8">{news.title}</h1>
           <div className="flex divide-x-2 space-x-4">

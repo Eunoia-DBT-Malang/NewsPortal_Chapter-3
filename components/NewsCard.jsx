@@ -4,10 +4,12 @@ const NewsCard = ({ image }) => {
   const desc = image.description;
   const res = desc.substr(0, 100);
   return (
-    <div className="bg-slate-100 flex flex-col 
+    <div
+      className="bg-slate-100 flex flex-col 
     rounded-lg shadow-lg hover:scale-105 
     hover:shadow-xl hover:bg-slate-200 
-    transition-all duration-200 ease-out">
+    transition-all duration-200 ease-out"
+    >
       <img
         src={image.urlToImage || "image not defined"}
         alt={image.title}
@@ -28,13 +30,14 @@ const NewsCard = ({ image }) => {
             <p>{image.publishedAt || "not defined"}</p>
           </footer>
         </div>
-        <a href={`/${image.title}`}
-      className="bg-orange-400 h-10
+        <a
+          href={`/${image.title}`}
+          className="bg-orange-400 h-10
         rounded-b-lg dark:text-gray-900
          hover:bg-orange-500 text-center items-center p-2"
-    >
-      Read More
-    </a>
+        >
+          Read More
+        </a>
       </div>
     </div>
   );
