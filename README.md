@@ -27,13 +27,14 @@ Direct to our [Wireframe](https://www.figma.com/community/file/12207197977314786
 ### Publications and Documentations
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-Click on our [Repository](https://github.com/Eunoia-DBT-Malang/NewsPortal_Chapter-3)
-
+Click on our 
+[Repository](https://github.com/Eunoia-DBT-Malang/NewsPortal_Chapter-3)
+[Power Point Documentation](https://s.id/PPT_eunoia-news-app)
 ## Our Features
 <li> Responsive website
 <li> Comprehensive UI design
 <li> Real-time updated calendar
-<li> Real-time weather and temperature report
+<li> Real-time temperature report
 <li> User device location
 <li> Headline automatic carousel
 
