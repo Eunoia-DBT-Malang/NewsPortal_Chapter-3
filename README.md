@@ -29,7 +29,7 @@ Direct to our [Wireframe](https://www.figma.com/community/file/12207197977314786
 
 Click on our 
 [Repository](https://github.com/Eunoia-DBT-Malang/NewsPortal_Chapter-3)
-[Power Point Documentation](https://s.id/PPT_eunoia-news-app)
+
 ## Our Features
 <li> Responsive website
 <li> Comprehensive UI design
